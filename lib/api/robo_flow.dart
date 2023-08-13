@@ -46,7 +46,7 @@ class ApiService {
 
   Future<Uint8List> sendImageForPredictionFile(File imageFile) async {
     var url = Uri.parse(
-        'https://detect.roboflow.com/box-apple/1?api_key=$apiKey&format=image&labels=true&stroke=5');
+        'https://detect.roboflow.com/box-apple/1?api_key=$apiKey&format=image&labels=false&stroke=5');
 
     var request = http.MultipartRequest('POST', url);
     request.files.add(await http.MultipartFile.fromPath(
