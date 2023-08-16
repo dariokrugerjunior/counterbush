@@ -4,7 +4,6 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'api/robo_flow.dart';
 import 'package:flutter/services.dart';
-import 'package:gallery_saver/gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 
 
@@ -43,12 +42,12 @@ class _HomePageState extends State<HomePage> {
       final tempFile = File(tempFilePath);
       await tempFile.writeAsBytes(bytes);
 
-      final result = await GallerySaver.saveImage(tempFilePath, toDcim: true);
-      if (result!) {
-        showSnackBar('Imagem salva na galeria com sucesso.');
-      } else {
-        showSnackBar('Error ao salvar imagem na galeria.');
-      }
+      // final result = await GallerySaver.saveImage(tempFilePath, toDcim: true);
+      // if (result!) {
+      //   showSnackBar('Imagem salva na galeria com sucesso.');
+      // } else {
+      //   showSnackBar('Error ao salvar imagem na galeria.');
+      // }
 
       // Após salvar, você pode excluir o arquivo temporário se necessário
       await tempFile.delete();
